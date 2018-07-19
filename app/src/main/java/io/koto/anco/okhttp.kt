@@ -25,7 +25,7 @@ suspend fun awaitCallback(block:(Callback)->Unit) : Response {
             }
         })
     }
-}
+}r
 
 suspend fun Call.aresponse():Response
         = net { awaitCallback { enqueue(it) } }

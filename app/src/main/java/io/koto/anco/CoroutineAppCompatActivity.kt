@@ -2,6 +2,7 @@ package io.koto.anco
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import kotlinx.coroutines.experimental.runBlocking
 import org.jetbrains.anko.coroutines.experimental.asReference
 
 open class CoroutineAppCompatActivity : AppCompatActivity() {
@@ -21,10 +22,8 @@ open class CoroutineAppCompatActivity : AppCompatActivity() {
         ui { onCreateAsync(savedInstanceState) }
     }
 
-    final override fun onStart() {
-        super.onStart()
-        ui { onStartAsync() }
-    }
+    final override fun onStart()  = ui { onStartAsync() }
+
 
     final override fun onRestart() {
         super.onRestart()
